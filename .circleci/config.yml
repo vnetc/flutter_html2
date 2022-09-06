@@ -8,6 +8,10 @@ jobs:
     steps:
     - checkout
     - run: flutter --version
-    - run: flutter test --coverage
+    - run: flutter pub global activate melos
+    - run: melos --version
+    - run: melos bootstrap
+    - run: melos run test
+    - run: melos run gen_coverage
     - codecov/upload:
-        file: coverage/lcov.info
+        file: coverage_report/lcov.info
