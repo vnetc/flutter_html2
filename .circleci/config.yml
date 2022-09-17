@@ -5,6 +5,7 @@ jobs:
   build:
     docker:
     - image: cirrusci/flutter
+    resource_class: large
     steps:
     - checkout
     - run: flutter --version
